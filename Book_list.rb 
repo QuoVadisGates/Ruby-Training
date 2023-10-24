@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+novel_hash = {
+  Green_Eggs: 5,
+  Harry_Potter: 8,
+  Way_Of_Kings: 6
+}
+
+answer = "yes"
+while answer == "yes"
+puts "Would you like to add another book to your hash? (Type yes or no) "
+answer = gets.chomp
+
+case answer
+  when "yes"
+      puts "What book would you like to add?"
+      book = gets.chomp
+      novel_hash[book.to_sym]
+      puts "What rating from 1 to 10, would you giver this book?"
+      rating = gets.chomp
+      novel_hash [book.to_sym] = rating.to_i
+      puts
+      puts " #{book} has been added to your hash with a rating of #{rating}."
+  when "no"
+      puts "Sounds good to me!"
+  end
+end
+puts "Heres whats in your hash now: #{novel_hash}."
+puts 
